@@ -31,7 +31,7 @@ def get_fight_links(url, fights):
 for event in events:
     get_fight_links(event["url"], event["fights"])
 
-json_file = 'events.json'
+json_file = 'events-test.json'
 with open(json_file, 'w', encoding='utf-8') as file:
     json.dump(events, file, indent=4, ensure_ascii=False)  # Pretty-print with indent=4
 
