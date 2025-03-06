@@ -1,11 +1,10 @@
-import csv
 import json
 import requests
 from tqdm import tqdm
 from fight_data import parse_fight_details
 
 # Replace 'file_path.json' with your JSON file path
-file_path = './simplified_fights.json'
+file_path = './all_fights.json'
 
 # Open and read the JSON file
 with open(file_path, 'r') as file:
@@ -55,17 +54,16 @@ with tqdm(total=len(data)) as progress_bar:
         # Update the progress bar
         progress_bar.update(1)
 
+
 # Save successful fights to a JSON file
-json_file = 'test_total_fights.json'
+json_file = f'{len(data)}_fights_data.json'
 with open(json_file, 'w', encoding='utf-8') as file:
     json.dump(total_fights_json, file, indent=4, ensure_ascii=False)
 
-# Save failed fights to a CSV file
-csv_file = 'test_failed_fights.csv'
-with open(csv_file, mode='w', newline='', encoding='utf-8') as file:
-    writer = csv.DictWriter(file, fieldnames=["index", "fight"])
-    writer.writeheader()
-    writer.writerows(failures)
+# Save successful fights to a JSON file
+results_file = f'{len(data)}_fights_data_results.json'
+with open(results_file, 'w', encoding='utf-8') as file:
+    json.dump(failures, file, indent=4, ensure_ascii=False)
 
 # Final report
 start_index = 1
@@ -78,5 +76,4 @@ print(f"Processing started at index: {start_index}")
 print(f"Processing ended at index: {end_index}")
 print(f"Successful fights: {len(total_fights_json)}")
 print(f"Failed fights: {len(failures)}")
-print(f"JSON file '{json_file}' created successfully with {len(total_fights_json)} fights.")
-print(f"CSV file '{csv_file}' created successfully with {len(failures)} failures.")
+

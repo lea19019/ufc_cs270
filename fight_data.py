@@ -192,7 +192,7 @@ def parse_fight_details(html_content):
     """Main function to parse fight details from HTML content"""
     soup = BeautifulSoup(html_content, 'html.parser')
     fight_details = soup.find('div', class_='b-fight-details')
-    # print(fight_details)
+    
     # Extract basic fight information
     fight_data = {
         'fighters': {},
@@ -217,12 +217,12 @@ def parse_fight_details(html_content):
 
 
 # Example usage:
-URL = "http://www.ufcstats.com/fight-details/91bf33ada75d6061"
-page = requests.get(URL)
+# URL = "http://www.ufcstats.com/fight-details/91bf33ada75d6061"
+# page = requests.get(URL)
 
-fight_data = parse_fight_details(page.content)
-json_file = 'test.json'
-with open(json_file, 'w', encoding='utf-8') as file:
-    json.dump(fight_data, file, indent=4, ensure_ascii=False)  # Pretty-print with indent=4
+# fight_data = parse_fight_details(page.content)
+# json_file = 'test.json'
+# with open(json_file, 'w', encoding='utf-8') as file:
+#     json.dump(fight_data, file, indent=4, ensure_ascii=False)  # Pretty-print with indent=4
 
 # print(f"JSON file '{json_file}' created successfully.")

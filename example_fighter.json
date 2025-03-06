@@ -1,0 +1,25 @@
+[
+    {
+        "name": "Wanderlei Silva",
+        "record": "Record: 35-13-1 (1 NC)",
+        "nickname": "The Axe Murderer",
+        "physical_attributes": {
+            "Height": "5' 11\"",
+            "Weight": "205 lbs.",
+            "Reach": "74\"",
+            "STANCE": "Orthodox",
+            "DOB": "Jul 03, 1976"
+        },
+        "career_statistics": {
+            "SLpM": "2.79",
+            "Str. Acc.": "40%",
+            "SApM": "2.19",
+            "Str. Def": "60%",
+            "TD Avg.": "0.97",
+            "TD Acc.": "53%",
+            "TD Def.": "62%",
+            "Sub. Avg.": "0.6"
+        },
+        "link": "http://www.ufcstats.com/fighter-details/a1f6999fe57236e0"
+    }
+]
